@@ -1,0 +1,67 @@
+$date
+	Wed Jul  1 12:47:45 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module testbench $end
+$var wire 1 ! y_valid $end
+$var wire 8 " y_data [7:0] $end
+$var wire 1 # x_ready $end
+$var wire 1 $ thr_ready $end
+$var reg 8 % thr_data [7:0] $end
+$var reg 1 & thr_valid $end
+$var reg 8 ' x_data [7:0] $end
+$var reg 1 ( x_valid $end
+$var reg 1 ) y_ready $end
+$scope module dut $end
+$var wire 8 * thr_data [7:0] $end
+$var wire 1 $ thr_ready $end
+$var wire 1 & thr_valid $end
+$var wire 8 + x_data [7:0] $end
+$var wire 1 # x_ready $end
+$var wire 1 ( x_valid $end
+$var wire 1 ) y_ready $end
+$var wire 1 ! y_valid $end
+$var wire 8 , y_data [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10100 ,
+b1010 +
+b1000 *
+1)
+1(
+b1010 '
+1&
+b1000 %
+1$
+1#
+b10100 "
+1!
+$end
+#100
+b100 "
+b100 ,
+b101 %
+b101 *
+b11 '
+b11 +
+#200
+0!
+0(
+#300
+1!
+0#
+0$
+0)
+1(
+#400
