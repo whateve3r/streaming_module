@@ -85,8 +85,8 @@ module tb_top;
     xil_axi4stream_data_beat beat;      // массив байт
     tr = agent.driver.create_transaction("mst tr");
     assert (tr.randomize());            // рандомизация задержек/выравнивания
-    beat = '{default:8'h00};
-    beat[0] = value;                    // канал 1-байтный -> байт [0]
+    beat = '{default:8'h00};            // заполняем нулями 
+    beat = value;                    
     tr.set_data_beat(beat);             // фиксируем tdata
     agent.driver.send(tr);
   endtask
@@ -155,7 +155,7 @@ module tb_top;
         for (int i = 0; i < N; i++) begin
           y_agent.monitor.item_collected_port.get(m);
           rbeat = m.get_data_beat();
-          got   = rbeat[0];
+          got   = rbeat;
 
           wait (x_q.size() > 0 && thr_q.size() > 0); // защита от чтения нуля
           xv  = x_q.pop_front();
