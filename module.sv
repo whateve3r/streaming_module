@@ -31,6 +31,8 @@ module top (
     logic       sel,           reg_sel;
     logic       comparison_valid;
 
+    logic       branch_ready;
+
     assign x_ready   = !reg_x_valid   || (reg_x_valid && reg_thr_valid && branch_ready);
     assign thr_ready = !reg_thr_valid || (reg_x_valid && reg_thr_valid && branch_ready);
 
@@ -60,7 +62,7 @@ module top (
             reg_thr_valid <= 1;
         end
         
-        else if (thr_valid && x_valid && branch_ready)
+        else if (reg_thr_valid && reg_x_valid && branch_ready)
             reg_thr_valid <= 0;
     end
 
